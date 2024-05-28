@@ -10,7 +10,7 @@ def load_data(url):
     return pd.read_excel(url)
 
 # Cargar el archivo de Excel desde la URL
-df = load_data(excel_url)
+df = pd.read_excel(excel_url)
 
 # Calcular las notas promedio de cada estudiante
 df['Promedio_Tareas'] = df[['TS1', 'TS2', 'TS3', 'TS4', 'TS5', 'TS6', 'TS7', 'TS8', 'TS9', 'TS10', 'TS11']].mean(axis=1)
