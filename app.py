@@ -3,14 +3,14 @@ import streamlit as st
 import plotly.express as px
 
 # URL del archivo Excel en el repositorio de GitHub
-excel_url = 'https://github.com/tu-usuario/tu-repositorio/raw/main/calificaciones.xlsx'
+excel_url = 'https://github.com/dcamarena2505/dashboard1/raw/main/calificaciones.xlsx'
 
 @st.cache
 def load_data(url):
     return pd.read_excel(url)
 
 # Cargar el archivo de Excel desde la URL
-df = pd.read_excel(excel_url)
+df = load_data(excel_url)
 
 # Calcular las notas promedio de cada estudiante
 df['Promedio_Tareas'] = df[['TS1', 'TS2', 'TS3', 'TS4', 'TS5', 'TS6', 'TS7', 'TS8', 'TS9', 'TS10', 'TS11']].mean(axis=1)
